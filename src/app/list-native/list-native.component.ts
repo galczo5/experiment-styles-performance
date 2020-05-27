@@ -4,22 +4,22 @@ import {BackgroundService} from '../background.service';
 import {Title} from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-list-renderer',
+  selector: 'app-list-native',
   providers: [BackgroundService],
   template: `
     <div class="header">
-      <code>this.renderer.setStyle(this.item.nativeElement, 'background', color);</code>
+      <code>this.item.nativeElement.style.background = color;</code>
       <button (click)="changeColorAll()">CHANGE ALL</button>
       <button (click)="changeColorHalf()">CHANGE HALF</button>
       <button (click)="changeColorOne()">CHANGE ONE</button>
     </div>
     <div class="list">
-      <app-list-item-renderer *ngFor="let x of iterator" [id]="x"></app-list-item-renderer>
+      <app-list-item-native *ngFor="let x of iterator" [id]="x"></app-list-item-native>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListRendererComponent implements OnInit {
+export class ListNativeComponent implements OnInit {
 
   color: 'gray' | 'orange' = 'gray';
   iterator = [];
@@ -36,21 +36,21 @@ export class ListRendererComponent implements OnInit {
     AppComponent.test(() => {
       this.color = this.color === 'gray' ? 'orange' : 'gray';
       this.changeForAll(this.color);
-    }, 'renderer');
+    }, 'native');
   }
 
   changeColorHalf() {
     AppComponent.test(() => {
       this.color = this.color === 'gray' ? 'orange' : 'gray';
       this.changeForHalf(this.color);
-    }, 'renderer');
+    }, 'native');
   }
 
   changeColorOne() {
     AppComponent.test(() => {
       this.color = this.color === 'gray' ? 'orange' : 'gray';
       this.backgroundService.set(1, this.color);
-    }, 'renderer');
+    }, 'native');
   }
 
   private changeForAll(color: string): void {

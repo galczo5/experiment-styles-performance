@@ -5,10 +5,8 @@ import {Title} from '@angular/platform-browser';
 @Component({
   selector: 'app-list-directive',
   template: `
-    <div>
+    <div class="header">
       <code>[style.background]="color"</code>
-      <br>
-      <br>
       <button (click)="changeColorAll()">CHANGE ALL</button>
       <button (click)="changeColorHalf()">CHANGE HALF</button>
       <button (click)="changeColorOne()">CHANGE ONE</button>
