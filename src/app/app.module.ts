@@ -1,16 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ListItemRendererComponent } from './list-item-renderer/list-item-renderer.component';
+import { ListItemDirectiveComponent } from './list-item-directive/list-item-directive.component';
+import { ListDirectiveComponent } from './list-directive/list-directive.component';
+import { ListRendererComponent } from './list-renderer/list-renderer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListItemRendererComponent,
+    ListItemDirectiveComponent,
+    ListDirectiveComponent,
+    ListRendererComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

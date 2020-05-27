@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  padding: 100px;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.list {
+  margin-top: 50px;
+}
+
+app-list-item-directive div,
+app-list-item-renderer div {
+  padding: 5px 10px;
+  margin-bottom: 2px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+button + button {
+  margin-left: 10px;
+}
+
+app-root {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+}
