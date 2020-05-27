@@ -37,3 +37,11 @@ app-root {
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 20px;
 }
+
+.coral {
+  background: coral;
+}
+
+.darkcyan {
+  background: darkcyan;
+}

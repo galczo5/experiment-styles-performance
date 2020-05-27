@@ -21,7 +21,7 @@ import {Title} from '@angular/platform-browser';
 })
 export class ListRendererComponent implements OnInit {
 
-  color: 'gray' | 'orange' = 'gray';
+  color: 'coral' | 'darkcyan' = 'coral';
   iterator = [];
 
   constructor(private backgroundService: BackgroundService) {}
@@ -34,21 +34,21 @@ export class ListRendererComponent implements OnInit {
 
   changeColorAll() {
     AppComponent.test(() => {
-      this.color = this.color === 'gray' ? 'orange' : 'gray';
+      this.color = this.color === 'coral' ? 'darkcyan' : 'coral';
       this.changeForAll(this.color);
     }, 'renderer');
   }
 
   changeColorHalf() {
     AppComponent.test(() => {
-      this.color = this.color === 'gray' ? 'orange' : 'gray';
+      this.color = this.color === 'coral' ? 'darkcyan' : 'coral';
       this.changeForHalf(this.color);
     }, 'renderer');
   }
 
   changeColorOne() {
     AppComponent.test(() => {
-      this.color = this.color === 'gray' ? 'orange' : 'gray';
+      this.color = this.color === 'coral' ? 'darkcyan' : 'coral';
       this.backgroundService.set(1, this.color);
     }, 'renderer');
   }

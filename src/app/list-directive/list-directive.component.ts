@@ -1,6 +1,5 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {AppComponent} from '../app.component';
-import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-list-directive',
@@ -19,7 +18,7 @@ import {Title} from '@angular/platform-browser';
 })
 export class ListDirectiveComponent implements OnInit {
 
-  color: 'orange' | 'gray' = 'orange';
+  color: 'coral' | 'darkcyan' = 'coral';
 
   iterator = [];
 
@@ -35,7 +34,7 @@ export class ListDirectiveComponent implements OnInit {
 
   changeColorAll() {
     AppComponent.test(() => {
-      this.color = this.color === 'orange' ? 'gray' : 'orange';
+      this.color = this.color === 'coral' ? 'darkcyan' : 'coral';
       this.changeForAll(this.color);
       this.changeDetectorRef.detectChanges();
     }, 'directive');
@@ -43,7 +42,7 @@ export class ListDirectiveComponent implements OnInit {
 
   changeColorHalf() {
     AppComponent.test(() => {
-      this.color = this.color === 'orange' ? 'gray' : 'orange';
+      this.color = this.color === 'coral' ? 'darkcyan' : 'coral';
       this.changeForHalf(this.color);
       this.changeDetectorRef.detectChanges();
     }, 'directive');
@@ -51,7 +50,7 @@ export class ListDirectiveComponent implements OnInit {
 
   changeColorOne() {
     AppComponent.test(() => {
-      this.color = this.color === 'orange' ? 'gray' : 'orange';
+      this.color = this.color === 'coral' ? 'darkcyan' : 'coral';
       this.idToColor.set(1, this.color);
       this.changeDetectorRef.detectChanges();
     }, 'directive');

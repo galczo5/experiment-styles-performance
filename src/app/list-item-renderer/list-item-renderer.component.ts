@@ -23,8 +23,12 @@ export class ListItemRendererComponent implements OnInit {
 
     this.backgroundService.get(this.id)
       .subscribe(color => {
-        this.renderer.setStyle(this.item.nativeElement, 'background', color);
-        // this.item.nativeElement.style.background = color;
+        if (color === 'coral') {
+          this.renderer.removeClass(this.item.nativeElement, 'darkcyan');
+        } else {
+          this.renderer.removeClass(this.item.nativeElement, 'coral');
+        }
+        this.renderer.addClass(this.item.nativeElement, color);
       });
 
   }
