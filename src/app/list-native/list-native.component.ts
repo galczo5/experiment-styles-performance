@@ -8,7 +8,7 @@ import {Title} from '@angular/platform-browser';
   providers: [BackgroundService],
   template: `
     <div class="header">
-      <code>this.item.nativeElement.style.background = color;</code>
+      <code>nativeElement.classList.add(color)</code>
       <button (click)="changeColorAll()">CHANGE ALL</button>
       <button (click)="changeColorHalf()">CHANGE HALF</button>
       <button (click)="changeColorOne()">CHANGE ONE</button>
@@ -21,7 +21,7 @@ import {Title} from '@angular/platform-browser';
 })
 export class ListNativeComponent implements OnInit {
 
-  color: 'gray' | 'orange' = 'gray';
+  color: 'coral' | 'darkcyan' = 'coral';
   iterator = [];
 
   constructor(private backgroundService: BackgroundService) {}
@@ -34,21 +34,21 @@ export class ListNativeComponent implements OnInit {
 
   changeColorAll() {
     AppComponent.test(() => {
-      this.color = this.color === 'gray' ? 'orange' : 'gray';
+      this.color = this.color === 'coral' ? 'darkcyan' : 'coral';
       this.changeForAll(this.color);
     }, 'native');
   }
 
   changeColorHalf() {
     AppComponent.test(() => {
-      this.color = this.color === 'gray' ? 'orange' : 'gray';
+      this.color = this.color === 'coral' ? 'darkcyan' : 'coral';
       this.changeForHalf(this.color);
     }, 'native');
   }
 
   changeColorOne() {
     AppComponent.test(() => {
-      this.color = this.color === 'gray' ? 'orange' : 'gray';
+      this.color = this.color === 'coral' ? 'darkcyan' : 'coral';
       this.backgroundService.set(1, this.color);
     }, 'native');
   }

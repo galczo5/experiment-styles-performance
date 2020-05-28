@@ -16,14 +16,19 @@ export class ListItemNativeComponent implements OnInit {
   @Input()
   id: number;
 
-  constructor(private backgroundService: BackgroundService,
-              private renderer: Renderer2) { }
+  constructor(private backgroundService: BackgroundService) { }
 
   ngOnInit(): void {
 
     this.backgroundService.get(this.id)
       .subscribe(color => {
-        this.item.nativeElement.style.background = color;
+        const nativeElement = this.item.nativeElement as HTMLElement;
+        if (color === 'coral') {
+          nativeElement.classList.remove('darkcyan');
+        } else {
+          nativeElement.classList.remove('coral');
+        }
+        nativeElement.classList.add(color);
       });
 
   }

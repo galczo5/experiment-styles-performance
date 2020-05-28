@@ -8,7 +8,7 @@ import {Title} from '@angular/platform-browser';
   providers: [BackgroundService],
   template: `
     <div class="header">
-      <code>this.renderer.setStyle(this.item.nativeElement, 'background', color);</code>
+      <code>this.renderer.addClass(this.item.nativeElement, color);</code>
       <button (click)="changeColorAll()">CHANGE ALL</button>
       <button (click)="changeColorHalf()">CHANGE HALF</button>
       <button (click)="changeColorOne()">CHANGE ONE</button>

@@ -5,7 +5,7 @@ import {AppComponent} from '../app.component';
   selector: 'app-list-directive',
   template: `
     <div class="header">
-      <code>[style.background]="color"</code>
+      <code>[ngClass]="color"</code>
       <button (click)="changeColorAll()">CHANGE ALL</button>
       <button (click)="changeColorHalf()">CHANGE HALF</button>
       <button (click)="changeColorOne()">CHANGE ONE</button>
