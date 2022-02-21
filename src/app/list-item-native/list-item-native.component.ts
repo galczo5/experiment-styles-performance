@@ -4,7 +4,7 @@ import {BackgroundService} from '../background.service';
 @Component({
   selector: 'app-list-item-native',
   template: `
-    <div #item>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis.</div>
+    <div #item>Lorem ipsum dolor sit amet enim.</div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -16,8 +16,7 @@ export class ListItemNativeComponent implements OnInit {
   @Input()
   id: number;
 
-  constructor(private backgroundService: BackgroundService,
-              private renderer: Renderer2) { }
+  constructor(private backgroundService: BackgroundService) { }
 
   ngOnInit(): void {
 

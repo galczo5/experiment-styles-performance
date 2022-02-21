@@ -4,7 +4,7 @@ import {BackgroundService} from '../background.service';
 @Component({
   selector: 'app-list-item-renderer',
   template: `
-    <div #item>Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis.</div>
+    <div #item>Lorem ipsum dolor sit amet enim.</div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -17,14 +17,14 @@ export class ListItemRendererComponent implements OnInit {
   id: number;
 
   constructor(private backgroundService: BackgroundService,
-              private renderer: Renderer2) { }
+              private renderer: Renderer2) {
+  }
 
   ngOnInit(): void {
 
     this.backgroundService.get(this.id)
       .subscribe(color => {
         this.renderer.setStyle(this.item.nativeElement, 'background', color);
-        // this.item.nativeElement.style.background = color;
       });
 
   }

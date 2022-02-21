@@ -13,7 +13,7 @@ declare var window: any;
 })
 export class AppComponent {
 
-  public static readonly ITEM_COUNT = 1000;
+  public static readonly ITEM_COUNT = 2400;
   public static readonly NUMBER_OF_TESTS = 101;
 
   private static readonly OUTPUT_STYLE = 'color: white; border-radius: 4px; padding: 2px 4px; font-weight: bold;';
