@@ -109,8 +109,21 @@
               "devServerTarget": "styles-performance:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
-    }},
-  "defaultProject": "styles-performance"
+    }
+  },
+  "defaultProject": "styles-performance",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
