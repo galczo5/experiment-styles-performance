@@ -35,21 +35,10 @@ export class AppComponent {
     const workTime = AppComponent.round(end - start);
     AppComponent.RESULTS.push(workTime);
 
-    const avg = AppComponent.round(
-      AppComponent.RESULTS.reduce((a, b) => a + b, 0) / AppComponent.RESULTS.length
-    );
-
-    const diff = AppComponent.round(workTime - avg);
-
     console.log(
       '%c' + startTime + ' ' + tag,
       AppComponent.OUTPUT_STYLE + (tag === 'renderer' ? 'background: blue;' : 'background: red;'),
       `${workTime}ms`
-    );
-
-    console.log(
-      '%cTest no. ' + AppComponent.RESULTS.length + ' ' + diff + ' ' + AppComponent.round((diff * 100) / avg) + '%' + ' AVG: ' + avg,
-      'color: gray;'
     );
 
   }
